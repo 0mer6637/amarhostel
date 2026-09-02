@@ -22,7 +22,7 @@ function App() {
   }, [page]);
 
   return (
-    <div className="min-h-screen bg-cream-50 flex flex-col">
+    <div className="min-h-screen bg-[#F7F3EC] flex flex-col">
       <Navbar currentPage={page} onNavigate={handleNavigate} />
       <main className="flex-1">
         {page === 'home' && <Home onNavigate={handleNavigate} />}
