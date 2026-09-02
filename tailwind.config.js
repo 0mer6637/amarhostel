@@ -4,48 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: {
-          50: '#FDFBF7',
-          100: '#FAF5EC',
-          200: '#F4EBD9',
-          300: '#EBDDBE',
-          400: '#DCC9A0',
-          500: '#C9B07E',
-        },
-        sand: {
-          50: '#FAF6EF',
-          100: '#F2E9D8',
-          200: '#E8D8C0',
-          300: '#D9C2A1',
-          400: '#C5A87C',
+        // Modern Warm Minimal Color Palette
+        warm: {
+          50: '#F7F5F0',    // Main background
+          100: '#EEEAE2',   // Secondary background
         },
         charcoal: {
-          700: '#3D352E',
-          800: '#2A241F',
-          900: '#1C1814',
+          700: '#3D3D3D',
+          800: '#2B2B2B',   // Primary text
+          900: '#1A1A1A',
         },
-        olive: {
-          50: '#F6F7EE',
-          100: '#EAEED6',
-          200: '#D3DBB0',
-          300: '#B5C284',
-          400: '#94A55E',
-          500: '#768845',
-          600: '#5D6D36',
-          700: '#4A562E',
-          800: '#3C4527',
-          900: '#313A22',
+        accent: {
+          green: '#4F6B57',  // Muted dark green (single accent)
         },
-        terracotta: {
-          400: '#C8856A',
-          500: '#B36B4F',
-          600: '#9E563D',
+        // Legacy support (converted to new palette)
+        cream: {
+          50: '#F7F5F0',
+          100: '#EEEAE2',
+          200: '#E8E4DA',
         },
-        navy: {
-          700: '#2C3E50',
-          800: '#243240',
-          900: '#1B2733',
-        },
+        white: '#FFFFFF',
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
@@ -74,6 +52,12 @@ export default {
         'fade-in': 'fade-in 0.6s ease-out forwards',
         'slide-down': 'slide-down 0.3s ease-out forwards',
         'scale-in': 'scale-in 0.4s ease-out forwards',
+      },
+      boxShadow: {
+        sm: '0 1px 2px 0 rgba(43, 43, 43, 0.04)',
+        md: '0 2px 8px 0 rgba(43, 43, 43, 0.08)',
+        lg: '0 8px 16px 0 rgba(43, 43, 43, 0.12)',
+        xl: '0 12px 24px 0 rgba(43, 43, 43, 0.15)',
       },
     },
   },
