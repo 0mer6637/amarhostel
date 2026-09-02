@@ -4,26 +4,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Modern Warm Minimal Color Palette
-        warm: {
-          50: '#F7F5F0',    // Main background
-          100: '#EEEAE2',   // Secondary background
+        // Complete Color System - ONLY 5 COLORS
+        // Main Background
+        primary: {
+          bg: '#F7F3EC',      // Main Background - Warm cream/beige
         },
-        charcoal: {
-          700: '#3D3D3D',
-          800: '#2B2B2B',   // Primary text
-          900: '#1A1A1A',
+        // Secondary Background
+        secondary: {
+          bg: '#EDE6DA',      // Secondary Background - Light beige
         },
+        // Primary Dark
+        dark: {
+          main: '#292722',    // Primary Dark - Dark charcoal/brown
+        },
+        // Accent
         accent: {
-          green: '#4F6B57',  // Muted dark green (single accent)
+          main: '#586B57',    // Accent - Muted sage green
         },
-        // Legacy support (converted to new palette)
-        cream: {
-          50: '#F7F5F0',
-          100: '#EEEAE2',
-          200: '#E8E4DA',
+        // White
+        light: {
+          bg: '#FFFFFF',      // White - For cards and text
         },
-        white: '#FFFFFF',
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
@@ -54,10 +55,10 @@ export default {
         'scale-in': 'scale-in 0.4s ease-out forwards',
       },
       boxShadow: {
-        sm: '0 1px 2px 0 rgba(43, 43, 43, 0.04)',
-        md: '0 2px 8px 0 rgba(43, 43, 43, 0.08)',
-        lg: '0 8px 16px 0 rgba(43, 43, 43, 0.12)',
-        xl: '0 12px 24px 0 rgba(43, 43, 43, 0.15)',
+        sm: '0 1px 2px 0 rgba(41, 39, 34, 0.04)',
+        md: '0 2px 8px 0 rgba(41, 39, 34, 0.08)',
+        lg: '0 8px 16px 0 rgba(41, 39, 34, 0.12)',
+        xl: '0 12px 24px 0 rgba(41, 39, 34, 0.15)',
       },
     },
   },
