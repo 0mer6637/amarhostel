@@ -9,8 +9,8 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  background-color: #FAF5EC;
-  color: #2A241F;
+  background-color: #F7F5F0;
+  color: #2B2B2B;
   overflow-x: hidden;
 }
 
@@ -23,16 +23,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF5EC;
+  background: #F7F5F0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C5A87C;
+  background: #C5C1B8;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B5A87C;
+  background: #B5B1A8;
 }
 
 @layer utilities {
@@ -42,4 +42,17 @@ body {
   .animate-delay-400 { animation-delay: 0.4s; }
   .animate-delay-500 { animation-delay: 0.5s; }
   .animate-delay-600 { animation-delay: 0.6s; }
+
+  /* Modern button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-[#4F6B57] hover:bg-[#3F5647] text-white font-bold rounded-lg px-6 py-3 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-[#2B2B2B] hover:bg-[#F7F5F0] text-[#2B2B2B] font-bold rounded-lg px-6 py-3 transition-all duration-200;
+  }
+
+  .card-base {
+    @apply bg-white rounded-2xl shadow-sm border border-[#EEEAE2] transition-all duration-300;
+  }
 }
