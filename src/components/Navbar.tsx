@@ -32,7 +32,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled
           ? 'bg-cream-50/95 backdrop-blur-md shadow-[0_2px_20px_rgba(42,36,31,0.08)]'
           : 'bg-cream-50/80 backdrop-blur-sm'
@@ -42,8 +42,9 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <button
+            type="button"
             onClick={() => handleNav('home')}
-            className="flex items-center gap-2.5 group"
+            className="flex items-center gap-2.5 group flex-shrink-0"
           >
             <div className="w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-olive-600 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
               <Home className="w-5 h-5 lg:w-6 lg:h-6 text-cream-50" strokeWidth={2.5} />
@@ -62,6 +63,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
           <div className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
               <button
+                type="button"
                 key={link.id}
                 onClick={() => handleNav(link.id)}
                 className={`px-4 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 ${
@@ -88,20 +90,28 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
           {/* Mobile hamburger */}
           <button
+            type="button"
             onClick={() => setOpen(!open)}
-            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg text-charcoal-800 hover:bg-cream-100 transition-colors"
+            className="lg:hidden relative w-12 h-12 flex items-center justify-center rounded-xl text-charcoal-800 hover:bg-cream-100 active:bg-cream-200 transition-colors touch-manipulation"
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
-            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {open ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu overlay */}
       {open && (
-        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-cream-50 z-50">
-          <div className="flex flex-col px-5 py-6 gap-2 h-full overflow-y-auto">
-            {NAV_LINKS.map((link, i) => {
+        <div
+          className="lg:hidden fixed inset-0 top-16 bg-cream-50 z-[99]"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="flex flex-col px-5 py-6 gap-3 h-full overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {NAV_LINKS.map((link) => {
               const icons: Record<PageId, typeof Home> = {
                 home: Home,
                 facilities: Utensils,
@@ -111,10 +121,10 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               const Icon = icons[link.id];
               return (
                 <button
+                  type="button"
                   key={link.id}
                   onClick={() => handleNav(link.id)}
-                  style={{ animationDelay: `${i * 0.06}s` }}
-                  className={`flex items-center gap-4 px-5 py-4 rounded-2xl font-bold text-lg transition-all duration-200 animate-fade-up ${
+                  className={`flex items-center gap-4 px-5 py-5 rounded-2xl font-bold text-lg transition-all duration-200 active:scale-95 ${
                     currentPage === link.id
                       ? 'bg-olive-600 text-cream-50 shadow-md'
                       : 'text-charcoal-700 bg-cream-100 hover:bg-cream-200'
@@ -129,8 +139,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               href={HOSTEL.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ animationDelay: '0.3s' }}
-              className="flex items-center justify-center gap-2.5 mt-4 bg-olive-600 text-cream-50 font-bold text-lg px-5 py-4 rounded-2xl shadow-lg animate-fade-up"
+              className="flex items-center justify-center gap-2.5 mt-4 bg-olive-600 text-cream-50 font-bold text-lg px-5 py-5 rounded-2xl shadow-lg active:scale-95 transition-transform"
             >
               <MessageCircle className="w-6 h-6" strokeWidth={2.5} />
               Chat on WhatsApp
