@@ -8,6 +8,7 @@ import {
   ArrowRight,
   CalendarDays,
   Clock,
+  MapPin,
 } from 'lucide-react';
 import { HOSTEL, IMAGES, type PageId } from '@/data';
 
