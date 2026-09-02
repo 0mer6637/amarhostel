@@ -99,7 +99,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-cream-50 animate-slide-down">
+        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 bg-cream-50 z-50">
           <div className="flex flex-col px-5 py-6 gap-2 h-full overflow-y-auto">
             {NAV_LINKS.map((link, i) => {
               const icons: Record<PageId, typeof Home> = {
